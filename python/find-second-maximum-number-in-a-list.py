@@ -22,14 +22,23 @@
 #######################################################################################
 # Solution 1
 
+# if __name__ == '__main__':
+#     n = int(input())
+#     arr = map(int, input().split())
+#     ls  = list(arr)
+
+#     ls.sort()
+#     max_A  = ls[-1]
+#     B      = [i for i in ls if i<max_A]
+#     B.sort()
+#     second = B[-1]
+#     print(second)
+
+########################################################################################
+# Solution 2
+
 if __name__ == '__main__':
     n = int(input())
-    arr = map(int, input().split())
-    ls  = list(arr)
-
-    ls.sort()
-    max_A  = ls[-1]
-    B      = [i for i in ls if i<max_A]
-    B.sort()
-    second = B[-1]
-    print(second)
+    arr = list(set(map(int, input().split())))
+    arr.sort(reverse=True)
+    print(arr[1])
