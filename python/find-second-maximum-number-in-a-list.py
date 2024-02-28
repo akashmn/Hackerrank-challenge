@@ -49,20 +49,13 @@
 if __name__ == '__main__':
     n = int(input())
     arr = map(int, input().split())
-    
-    ls = list(arr)
-    
-    smax,maxim, i = -101, -101, 0
+    maxNum = -101 #max negative value
+    runnerUp = -101 
+    for i in arr:
+        if i > maxNum:
+            runnerUp = maxNum
+            maxNum = i
+        if i > runnerUp and i < maxNum:
+            runnerUp = i
+    print(runnerUp)
 
-    while i < len(ls): 
-    
-        if(ls[i] > maxim):
-            smax = maxim 
-            maxim = ls[i] 
-            
-        elif (ls[i] < maxim and ls[i] > smax):
-            smax = ls[i]
-            
-        i+=1
-
-    print(smax)
